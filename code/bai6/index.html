@@ -1,0 +1,79 @@
+<title>bài 6</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Symmetric HTML</title>
+<style>
+    body {
+        background-image: url('https://img5.thuthuatphanmem.vn/uploads/2021/07/16/hinh-anh-vu-tru-lung-linh-dep-nhat_090539537.jpg');
+        backeground-size: cover;
+        background-position: center;
+        margin: 0; /* Loại bỏ margin mặc định */
+        padding: 0; /* Loại bỏ padding mặc định */
+        display: flex;
+        justify-content: center; /* Căn giữa trang web theo chiều ngang */
+        align-items: center; /* Căn giữa trang web theo chiều dọc */
+        height: 100vh;
+        text-align: center; /* Căn giữa nội dung trong body */
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        margin: auto; /* Căn giữa container */
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        width: 190%;
+        margin-bottom: 20px;
+    }
+
+    .letter {
+        flex: 1;
+        font-size: 25px;
+        color: White; /* Màu chữ vàng mặc định */
+    }
+
+    /* Màu số là trắng */
+    .number {
+      flex: 1;
+        font-size: 25px;
+        color: white; /* Thay đổi màu số thành màu trắng */
+    }
+
+    /* Thay đổi khoảng cách giữa các phần tử trong cùng một hàng */
+    .row span:not(:last-child) {
+        margin-right: 45px; /* Điều chỉnh khoảng cách tại đây */
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <span class="letter">🎓</span>
+        <span class="letter">👩🏼‍💻</span>
+        <span class="letter">💡</span>
+        <span class="letter">🌎</span>
+    </div>
+    <div class="row span 2">
+        <span class="number">20000</span>
+        <span class="number">92%</span>
+        <span class="number">586</span>
+        <span class="number">18</span>
+    </div>
+    <div class="row">
+        <span class="letter">Sinh viên ứng tuyển</span>
+        <span class="letter">Sinh viên hoàn thành chương trình học</span>
+        <span class="letter">Bài báo khoa học</span>
+        <span class="letter">Giải thưởng, học bổng quốc tế</span>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<title>bài 1</title>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công ty cổ phần May Việt Tiến</title>
+    <style>
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+       
+        .brand-name {
+            font-style: italic;
+            font-size: 25px;
+         
+        }
+        .highlight {
+            color: #007bff; /* Màu xanh */
+            font-weight: bold; /* In đậm */
+        }
+        .product-box {
+            display: flex;
+            justify-content: center; /* Canh giữa các ô */
+            gap: 50px; /* Khoảng cách giữa các ô */
+            margin-top: 20px;
+            color: #DDDDDD;
+            width: 100%; /* Đảm bảo rằng product-box có chiều rộng tối đa */
+        }
+        .product {
+            width: 200px; /* Độ rộng cố định cho mỗi ô sản phẩm */
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+            color: #0066CC;
+            background-color: #f2e9e4; /* Đổi màu nền của ô */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <img src="https://cdn.glitch.global/54d95c73-f79d-4ae5-8db2-d18be45e0a1f/15385835_LOGO-VIETTIEN-900X900.png?v=1709196590631" alt="Logo của bạn" class="logo">
+        
+        <h3 class="brand-name">Công ty cổ phần May <span class="highlight">Việt Tiến</span></h3>
+      <p>Chuyên cung cấp các loại trang phục công sở Nam, Nữ</p>
+    </header>
+    <main>
+        
+        
+        
+        <div class="product-box">
+            <div class="product" onclick="redirectToProductPage('male')">
+                <p>Sản phẩm Nam 👕 </p>
+            </div>
+            <div class="product" onclick="redirectToProductPage('female')">
+                <p>Sản phẩm Nữ 👚 </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
