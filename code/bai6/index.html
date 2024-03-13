@@ -1,79 +1,131 @@
-<title>bài 6</title>
+<title>Bài 6</title>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Symmetric HTML</title>
-<style>
-    body {
-        background-image: url('https://img5.thuthuatphanmem.vn/uploads/2021/07/16/hinh-anh-vu-tru-lung-linh-dep-nhat_090539537.jpg');
-        backeground-size: cover;
-        background-position: center;
-        margin: 0; /* Loại bỏ margin mặc định */
-        padding: 0; /* Loại bỏ padding mặc định */
-        display: flex;
-        justify-content: center; /* Căn giữa trang web theo chiều ngang */
-        align-items: center; /* Căn giữa trang web theo chiều dọc */
-        height: 100vh;
-        text-align: center; /* Căn giữa nội dung trong body */
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: hologram 5s infinite alternate; /* Thêm hiệu ứng chuyển động */
+        }
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
-        width: 50%;
-        margin: auto; /* Căn giữa container */
-    }
+        .login-container {
+            background: linear-gradient( #ffb5e8, #ace7ff); /* Gradient hồng và xanh */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center; /* Căn giữa văn bản */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .row {
-        display: flex;
-        justify-content: space-between;
-        width: 190%;
-        margin-bottom: 20px;
-    }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
 
-    .letter {
-        flex: 1;
-        font-size: 25px;
-        color: White; /* Màu chữ vàng mặc định */
-    }
+        label {
+            margin-bottom: 8px;
+            text-align: left; /* Căn văn bản sang trái */
+        }
 
-    /* Màu số là trắng */
-    .number {
-      flex: 1;
-        font-size: 25px;
-        color: white; /* Thay đổi màu số thành màu trắng */
-    }
+        p {
+            font-size: 14px; /* Chỉnh kích thước chữ cho dòng chữ */
+            margin-bottom: 30px; /* Giảm khoảng cách giữa dòng chữ và input */
+            margin-top: -10px; /* Đặt khoảng cách giữa dòng chữ và trên dòng "Log In" */
+        }
 
-    /* Thay đổi khoảng cách giữa các phần tử trong cùng một hàng */
-    .row span:not(:last-child) {
-        margin-right: 45px; /* Điều chỉnh khoảng cách tại đây */
-    }
-</style>
+        input {
+            padding: 8px;
+            margin-bottom: 16px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #FF6699;
+            color: #6699FF;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+          
+        }
+
+        button:hover {
+            background-color: #FF3333;
+        }
+
+        @keyframes hologram {
+            0% {
+                background: linear-gradient(45deg, #ffb5e8, #000000);
+            }
+            100% {
+                background: linear-gradient(45deg, #ffb5e8, #000000);
+            }
+        }
+
+        /* Thêm phần CSS cho ô chọn */
+        .product-box {
+            display: flex;
+            justify-content: space-between; /* Căn giữa theo chiều ngang */
+            margin-top: 20px;
+        }
+
+        .product {
+            flex-grow: 1;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 4px;
+            color: #00000; /* Màu chữ đen */
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 10px;
+          height: 1vh;
+        }
+
+        .product-forgot {
+            background-color: #fffff; /* Trắng */
+        }
+        .product-signup {
+            background-color: #FF66FF;
+        }
+      
+        .product:hover {
+            background-color: #0033FF; /* nhấp vào là đổi màu */
+        }
+    </style>
+    <title>Login Page</title>
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <span class="letter">🎓</span>
-        <span class="letter">👩🏼‍💻</span>
-        <span class="letter">💡</span>
-        <span class="letter">🌎</span>
+    <div class="login-container">
+        <form id="loginForm">
+            <h2>Log In</h2>
+            <p>Login here using your username and password</p>
+          
+            <input type="text" id="fullName" name="fullName" placeholder="👤 UserName" required>
+   
+            <input type="text" id="Password" name="password" placeholder="🔑 Password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <div class="product-box">
+            <div class="product product-forgot" onclick="redirectToForgotPasswordPage()">
+                <p>Forgot Password</p>
+            </div>
+            <div class="product product-signup" onclick="redirectToSignupPage()">
+                <p>Sign up</p>
+            </div>
+        </div>   
     </div>
-    <div class="row span 2">
-        <span class="number">20000</span>
-        <span class="number">92%</span>
-        <span class="number">586</span>
-        <span class="number">18</span>
-    </div>
-    <div class="row">
-        <span class="letter">Sinh viên ứng tuyển</span>
-        <span class="letter">Sinh viên hoàn thành chương trình học</span>
-        <span class="letter">Bài báo khoa học</span>
-        <span class="letter">Giải thưởng, học bổng quốc tế</span>
-    </div>
-</div>
 </body>
 </html>
+
+

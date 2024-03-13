@@ -2,59 +2,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
     <style>
         body {
-            background-image: url('https://images.wallpaperscraft.com/image/single/coffee_beans_coffee_brown_192621_3840x2160.jpg');
-            /* Đường dẫn đến hình ảnh nền */
-            background-size: cover;
-            /* Kích thước ảnh nền để phủ toàn bộ trang */
-            background-position: center;
-            /* Canh giữa ảnh nền */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
-            /* Chiều cao của trang là 100% chiều cao của viewport */
-            margin: 0;
-            /* Loại bỏ margin */
-            padding: 0;
-            /* Loại bỏ padding */
-            background-color: #f0f0f0;
-            /* Màu nền của trang web */
-            color: white; /* Màu chữ trắng */
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        form {
+            background: #222;
+            color: #fff;
             padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            position: relative;
         }
 
-        .center-content {
-            text-align: center;
-            margin-top: 50vh; /* Move the container down by half of the viewport height */
-            transform: translateY(-50%);
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 0px;
+            border-radius: 3px;
+            box-sizing: border-box;
+            background-color: #888; /* Màu box */
+            display: block;
+            margin-bottom: 10px; 
         }
 
-        .custom-button {
-            background-color: red;
-            color: white; /* Màu chữ trắng */
-            padding: 20px 60px;
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px;
             border: none;
-            border-radius: 0px;
+            border-radius: 3px;
             cursor: pointer;
+            
+            margin-right: 50px; /* Căng lề phải */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
         }
     </style>
-    <title>bài 5</title>
 </head>
 <body>
-<div class="container center-content">
-    <h5>
-        <p style="font-size: 30px;">CƠ HỘI CHỈ ĐẾN VỚI BẠN MỘT LẦN DUY NHẤT.</p>
-    </h5>
-    <div>
-        <p style="font-size: 18px;">Bạn sẽ nhận được ưu đãi TỐT NHẤT nếu là thành viên của TRUNG NGUYÊN coffee.</p>
-    </div>
-    <div>
-        <button class="custom-button">ĐĂNG KÝ THAM GIA</button>
-    </div>
-</div>
+    <form onsubmit="return showPasswordConfirmation()">
+        <h2>Login</h2>
+        <input type="text" id="fullName" name="fullName" placeholder="User Name" required>
+        <input type="password" id="Password" name="password" placeholder="Password" required>
+        <input type="submit" value="Đăng nhập">
+        
+        <script>
+            function showPasswordConfirmation() {
+                // Hiển thị cửa sổ xác nhận khi nhấp vào nút "Đăng nhập"
+                var isShowPassword = confirm("Bạn muốn hiện mật khẩu?");
+                
+                // Nếu người dùng chọn "OK", thay đổi kiểu ô mật khẩu thành "text"
+                if (isShowPassword) {
+                    document.getElementById("Password").type = "text";
+                }
+
+                // Nếu người dùng chọn "Cancel" hoặc đóng cửa sổ xác nhận, tiếp tục với việc submit biểu mẫu
+                return true;
+            }
+        </script>
+    </form>
 </body>
 </html>
